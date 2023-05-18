@@ -98,26 +98,6 @@ for (file in files){
   dev.off()
 }
 
-#Mapping multiple files to FLOWSOM map
-validation <- vector(mode= "list", length = length(files))
-validation <- setNames(validation,files)
-for(i in 1:length(files)){
-  file <- files[i]
-  ff_prepr <- read.FCS(paste0(dir_prepr, file))
-  fsom_tmp <- NewData(fsom = fsom,input = ff_prepr)
-  validation[[i]] <- fsom_tmp
-  #clustering <- GetClusters(fsom_tmp)
-  #clustering_raw <- matrix(data = rep(0, nrow(exprs(ff_raw))),
-  #                         ncol = 1, dimnames = list(c(), "FlowSOM"))
-  #clustering_raw[exprs(ff_prepr)[,"Original_ID"]] <- clustering
-  #ff_tmp <- flowCore::fr_append_cols(ff_raw, clustering_raw)
-  #write.FCS(ff_tmp, paste0(dir_results, gsub(".fcs","",file), "_flowsom.fcs", file))
-  #PlotStars(fsom = fsom_tmp,  
-  #          backgroundValues = fsom$metaclustering)
-  #ggsave(paste0(dir_results, gsub(".fcs","",file), "_fsom_tree.pdf"), height = 8.5, width = 11)
-  #FlowSOMmary(fsom = fsom_tmp, plotFile = paste0(dir_results,gsub(".fcs","",file), "_summary.pdf"))
-}
-
 #Generate a vector with multiple mapped FCS files
 validation <- vector(mode= "list", length = length(files))
 validation <- setNames(validation,files)
