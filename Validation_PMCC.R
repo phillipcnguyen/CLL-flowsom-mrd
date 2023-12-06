@@ -14,7 +14,7 @@ fsom_level2 <- readRDS("Documents/FlowSOM project/CLLproject/Training/RDS/ fsom_
 
 #Define variables
 file_pattern <- ".fcs" 
-reference_file <- read.FCS("Documents/FlowSOM project/CLLproject/Validation/Data/Raw/12349141_VINE_CLLMRDPRE_COMBINATION.fcs")
+reference_file <- read.FCS("Documents/FlowSOM project/CLLproject/Validation/Data/Raw/20.fcs")
 reference_marker <- "PE-A" 
 markers_of_interest <- c("SSC-A", "CD81FITC", "CD79b PE", "CD22 PE-Cy5-5", "CD19 PE-Cy7", "CD43 APC", "CD20 APC-H7", "CD5 BV-421", "CD3 V510")
 
